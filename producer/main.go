@@ -18,7 +18,7 @@ func main() {
 
 			rand.Seed(time.Now().UnixNano())
 			min := 1
-			max := 10
+			max := 5
 			limit := rand.Intn(max-min+1) + min
 			log.Println(fmt.Sprintf("Making %d request(s)...", limit))
 
@@ -30,5 +30,4 @@ func main() {
 			}
 		}
 	}
-
 }

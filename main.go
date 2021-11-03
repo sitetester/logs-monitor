@@ -21,14 +21,13 @@ func main() {
 			parsedLogs, lastReadNum := logsReader.Read(filePath, previousLineNum)
 			previousLineNum = lastReadNum
 
-			t:= time.Now().Format("2006-01-02 15:04:05")
+			t := time.Now().Format("2006-01-02 15:04:05")
 			if len(parsedLogs) > 0 {
 				r := logsParser.Parse(parsedLogs)
 				fmt.Printf("%s: %+v\n", t, r)
 			} else {
 				fmt.Printf("%s: %+v\n", t, logs.ParseResult{
-					TotalUniqueIps: 0,
-					TotalRequests:  0,
+					TotalRequests: 0,
 				})
 			}
 		}
